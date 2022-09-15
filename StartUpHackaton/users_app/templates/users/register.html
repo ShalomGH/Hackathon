@@ -17,11 +17,17 @@
     <body>
         <form action="/register/" method="post">
             {% csrf_token %}
-            <label for="username">Startup name</label>
+            <label for="username">Логин</label>
             <input id="username" type="text" name="username" value="{{ current_name }}">
-            <label for="password">Password</label>
+            <label for="email">Электронная почта</label>
+            <input id="email" type="text" name="email" value="{{ current_email }}">
+            <label for="password">Пароль</label>
             <input id="password" type="password" name="password" value="{{ current_password }}">
-            <input type="submit" value="OK">
+            <label for="password_confirm">Подтверждение пароля</label>
+            <input id="password_confirm" type="password"
+                   name="password_confirm"
+                   value="{{ current_password_confirm }}">
+            <input type="submit" value="Зарегистрироваться">
         </form>
     </body>
 </html>

@@ -1,38 +1,56 @@
+import logging
+
 from django import forms
 from django.forms import ModelForm
 
 from users_app.models import User
 
+logger = logging.getLogger(__name__)
 
-# define the class of a form
+
 class UserRegistrationForm(ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
+    password_confirm = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
-        # write the name of models for which the form is made
         model = User
+        fields = ['username', 'email', 'password', 'password_confirm']
 
-        # Custom fields
-        fields = ["username", "password"]
-
-    # this function will be used for the validation
     def clean(self):
-
-        # data from the form is fetched using super function
         super(UserRegistrationForm, self).clean()
 
-        # extract the username and text field from the data
         username = self.cleaned_data.get('username')
+        email = self.cleaned_data.get('email')
         password = self.cleaned_data.get('password')
-        print(f'{username=}  {password=}')
+        password_confirm = self.cleaned_data.get('password_confirm')
+        logger.info(f'{username=}   {email=}   {password=}   {password_confirm=}')
 
-        # conditions to be met for the username length
-        if len(username) < 5:
-            self._errors['username'] = self.error_class([
-                'Minimum 5 characters required'])
-        if len(password) < 8:
-            self._errors['text'] = self.error_class([
-                'Password Should Contain a minimum of 9 characters'])
+        # todo: email validation
 
-        # return any errors if found
+        if password != password_confirm:
+            print('Пароли не совпадают')
+            self._errors['password_confirmation'] = self.error_class([
+                'Пароли не совпадают'])
+
         return self.cleaned_data
+
+
+class UserEditingForm(ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    password_confirm = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password', 'password_confirm']
+
+    def clean(self):
+        super(UserEditingForm, self).clean()
+
+        username = self.cleaned_data.get('username')
+        email = self.cleaned_data.get('email')
+        password = self.cleaned_data.get('password')
+        password_confirm = self.cleaned_data.get('password_confirm')
+        logger.info(f'{username=}   {email=}   {password=}   {password_confirm=}')
+
+        return self.cleaned_data
+

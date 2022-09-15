@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/account/" method="post">
+    {% csrf_token %}
+    <label for="username">Логин</label>
+    <input id="username" type="text" name="username" value="{{ current_name }}">
+    <label for="email">Электронная почта</label>
+    <input id="email" type="text" name="email" value="{{ current_email }}">
+    <label for="password">Пароль</label>
+    <input id="password" type="password" name="password" value="{{ current_password }}">
+    <label for="password_confirm">Подтверждение пароля</label>
+    <input id="password_confirm" type="password"
+           name="password_confirm"
+           value="{{ current_password_confirm }}">
+    <input type="submit" value="Зарегистрироваться">
+</form>
+{% endblock content %}
