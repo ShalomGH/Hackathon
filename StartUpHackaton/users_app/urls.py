@@ -5,7 +5,7 @@ from users_app.views import index
 
 
 urlpatterns = [
-    path('', index, name='home'),
+    path('', index),
     path('email/activate/<str:uid>/<str:token>/', views.activation),
 ]
 
