@@ -1,6 +1,7 @@
 import logging
 
 import requests
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from http import HTTPStatus
 
@@ -14,11 +15,6 @@ def index(request):
     return render(request, 'users/index.html')
 
 
-def activation(request, uid, token):
-    response = requests.post('http://localhost:8000/api/v1/auth/users/activation/', data={'uid': uid, 'token': token})
-    if response.status_code == HTTPStatus.OK:
-        return HttpResponse(f'Activation page<p>'
-                            f'uid = {uid}<br>'
-                            f'token = {token}')
-    else:
-        return HttpResponse(f'Bad request')
+def register(request):
+    form = UserCreationForm()
+    return render(request, 'users/register.html', {'form': form})
