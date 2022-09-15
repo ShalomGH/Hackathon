@@ -3,8 +3,9 @@ import logging
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 
-
 from django.shortcuts import render, redirect
+
+from users_app.create_form import CreateUser
 
 logger = logging.getLogger(__name__)
 
@@ -16,13 +17,11 @@ def index(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CreateUser(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('index')
+            return redirect('/')
     else:
-        form = UserCreationForm()
-    context = {'form': form}
-    template_name = 'users/register.html'
-    return render(request, template_name, context)
+        form = CreateUser()
+    return render(request, 'users/register.html', {'form': form})

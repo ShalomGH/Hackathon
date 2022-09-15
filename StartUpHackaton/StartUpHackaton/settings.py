@@ -239,4 +239,3 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'users_app.User'
-AUTHENTICATION_BACKENDS = ('users_app.backends.AuthBackend',)
