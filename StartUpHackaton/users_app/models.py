@@ -8,14 +8,11 @@ from users_app.managers import UserManager
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField('username', max_length=40, unique=True)
 
-    first_name = models.CharField('first name', max_length=30)
-    last_name = models.CharField('last name', max_length=50)
+    first_name = models.CharField('first name', max_length=40)
+    last_name = models.CharField('last name', max_length=40)
 
     email = models.EmailField('email address', null=True, blank=True, unique=True)
     email_verified = models.BooleanField(default=False)
-
-    phone = models.CharField('phone number', max_length=30, null=True, unique=True)
-    phone_verified = models.BooleanField(default=False)
 
     company_id = models.IntegerField(default=0, blank=True)
     post = models.IntegerField(default=0)
@@ -37,4 +34,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'user'
         verbose_name_plural = 'users'
-        unique_together = ('username', 'email', 'phone')
+        unique_together = ('username', 'email')
