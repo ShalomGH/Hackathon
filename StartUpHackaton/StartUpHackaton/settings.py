@@ -61,9 +61,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'users_app',
+    'bootstrap5',
 
-    'users_app.usersAppConfig',
+    'users_app',
 ]
 
 MIDDLEWARE = [
@@ -240,34 +240,3 @@ LOGGING = {
 
 AUTH_USER_MODEL = 'users_app.User'
 AUTHENTICATION_BACKENDS = ('users_app.backends.AuthBackend',)
-
-SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': 'Bearer'
-}
-
-
-DJOSER_SERIALIZERS = {
-    'user_create_password_retype': 'users_app.serializers.UserSerializer',
-}
-
-
-# Djoser settings
-DJOSER = {
-    'USER_CREATE_PASSWORD_RETYPE': True,
-    'SEND_ACTIVATION_EMAIL': True,
-    'SET_PASSWORD_RETYPE': True,
-    'PASSWORD_RESET_CONFIRM_RETYPE': True,
-    'TOKEN_MODEL': None,  # only JWT
-    'ACTIVATION_URL': 'api/v1/users/email/activate/{uid}/{token}',
-    'SERIALIZERS': DJOSER_SERIALIZERS,
-}
-
-
-# Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_PORT = os.getenv('EMAIL_PORT')
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-EMAIL_USE_SSL = True
-DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER')

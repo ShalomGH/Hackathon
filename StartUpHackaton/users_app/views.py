@@ -1,9 +1,7 @@
 import logging
 
-import requests
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
-from http import HTTPStatus
+
 
 from django.shortcuts import render
 
@@ -17,4 +15,6 @@ def index(request):
 
 def register(request):
     form = UserCreationForm()
-    return render(request, 'users/register.html', {'form': form})
+    context = {'form': form}
+    template_name = 'users/register.html'
+    return render(request, template_name, context)
