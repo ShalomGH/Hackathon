@@ -4,12 +4,14 @@ import requests
 from django.http import HttpResponse
 from http import HTTPStatus
 
+from django.shortcuts import render
+
 logger = logging.getLogger(__name__)
 
 
 def index(request):
     logger.debug('debug from index')
-    return HttpResponse('users_app index')
+    return render(request, 'users/index.html')
 
 
 def activation(request, uid, token):
