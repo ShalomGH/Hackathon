@@ -19,10 +19,6 @@ class User(AbstractBaseUser):
     avatar_path = models.TextField(max_length=50, null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
 
-    is_active = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
-    is_verified = models.BooleanField(default=False)
-
     USERNAME_FIELD = 'username'
     # REQUIRED_FIELDS = ['email']
     def __str__(self):
