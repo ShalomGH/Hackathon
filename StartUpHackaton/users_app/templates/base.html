@@ -4,27 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load bootstrap5 %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css/main.css' %}" type="text/css">
 
-    {% bootstrap_css %}
-
-    {% bootstrap_javascript %}
-
-    {% bootstrap_messages %}
-
-    <title>Startup</title>
+    <title>Document</title>
 </head>
 <body>
-
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
+    <header class="header">
+        <div class="header-menu">
+            <div class="main-links">
+                <ul>
+                    <li>
+                        <a href="#">Специалисту</a>
+                    </li>
+                    <li>
+                        <a href="#">Инвестору</a>
+                    </li>
+                    <li>
+                        <a href="#">ИТ-специалисту</a>
+                    </li>
+                    <li>
+                        <a href="#">Наставнвику</a>
+                    </li>
+                    <li>
+                        <a href="#">Проекты</a>
+                    </li>
+                </ul>
             </div>
-        {% endfor %}
-    {% endif %}
+            <div class="other-links">
+                <a href="#"><img src="../../static/img/person.svg" class="person" alt="profile"></a>
+                <a href="#"><img src="../../static/img/menu.svg" alt="burger menu"></a>
+            </div>
+        </div>
+    </header>
     {% block content %}
 
     {% endblock content %}
+    <footer class="footer">
+        <div class="links-footer">
+            <div class="column">
+                <p>СТАРТ</p>
+                <a href="#">Главная</a>
+                <a href="#">Вход</a>
+                <a href="#">Стратапы</a>
+            </div>
+            <div class="column">
+                <p>О НАС</p>
+                <a href="#">О платформе</a>
+                <a href="#">Контакты</a>
+                <a href="#">Отзывы</a>
+            </div>
+            <div class="column">
+                <p>ПОМОЩЬ</p>
+                <a href="#">ИТ-специалисту</a>
+                <a href="#">Стартаперу</a>
+                <a href="#">Инвестору</a>
+            </div>
+            <div class="column">
+                <p>ПОМОЩЬ</p>
+                <a href="#">Наставнику</a>
+                <a href="#">Проекты</a>
+                <a href="#">Задать вопрос</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <img src="../../static/img/vk.svg" alt="vk">
+            <img src="../../static/img/telegram.svg" alt="telegram">
+            <img src="../../static/img/Instagram.svg" alt="Instagram">
+        </div>
+    </footer>
 </body>
 </html>
