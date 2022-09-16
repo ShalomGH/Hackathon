@@ -1,5 +1,6 @@
 import logging
 
+from django.contrib import messages
 from django.shortcuts import render, redirect
 
 from users_app.forms import UserRegistrationForm, UserEditingForm
@@ -18,8 +19,9 @@ def register(request):
         if user.is_valid():
             user.save()
             username = user.cleaned_data.get('username')
+            messages.success(f'Account created for {username}!')
             print(f'Account created for {username}!')
-            return redirect('/')
+            return redirect('index')
     else:
         user = UserRegistrationForm()
     return render(request, 'users/register.html', {'form': user})

@@ -1,17 +1,18 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
-    <form action="/register/" method="post">
+<div class="content-section">
+    <form method="post" action="">
         {% csrf_token %}
-        <label for="username">Логин</label>
-        <input id="username" type="text" name="username" value="{{ current_name }}">
-        <label for="email">Электронная почта</label>
-        <input id="email" type="text" name="email" value="{{ current_email }}">
-        <label for="password">Пароль</label>
-        <input id="password" type="password" name="password" value="{{ current_password }}">
-        <label for="password_confirm">Подтверждение пароля</label>
-        <input id="password_confirm" type="password"
-               name="password_confirm"
-               value="{{ current_password_confirm }}">
-        <input type="submit" value="Зарегистрироваться">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
     </form>
-{% endblock content %}
+    <div class="border-top pt-3">
+        <small class="text-muted">Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a></small>
+    </div>
+</div>
+{% endblock content%}
