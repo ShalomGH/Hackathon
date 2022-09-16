@@ -11,6 +11,7 @@ class UserManager(BaseUserManager):
         """
         Create and save a User with the given email and password.
         """
+        print(username)
         if not username:
             raise ValueError(_('The Username must be set'))
         if not email:
