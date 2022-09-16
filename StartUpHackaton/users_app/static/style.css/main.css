@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Hachi Maru Pop';
+    src: url('../fonts/HachiMaruPop-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 , h4, h5, h6 {
+    font-family: 'Hachi Maru Pop', cursive;
+    color: #4A4A4A;
+    font-weight: 100;
+    font-size: 42px;
+}
+
+a {
+    text-decoration: none;
+    color: #4A4A4A;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header-menu {
+    background: #EAF9F3;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px 0px #7FCDC482;
+}
+
+.main-links ul {
+    display: flex;
+    margin: 30px 590px 30px 120px;
+}
+
+.main-links li a {
+    margin-right: 20px;
+}
+
+.person {
+    margin-right: 110px;
+}
+
+.header-action {
+    background: #FDFFE1;
+    display: flex;
+    box-shadow: 0 6px 20px 6px #7FCDC482;
+}
+
+.info {
+    padding: 130px 76px 130px 120px;
+}
+
+.info p {
+    font-size: 24px;
+    margin: 40px 0 60px;
+    width: 899px;
+    line-height: 29px;
+}
+
+.btn-block {
+    display: flex;
+}
+
+.btn {
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+    border-radius: 40px;
+    display: block;
+}
+
+.find {
+    background: #7FCDC4;
+    margin-right: 81px;
+}
+
+.watch {
+    border: 1px solid #4A4A4A;
+}
+
+.mentors-projects {
+    background: #EAF9F3;
+    text-align: center;
+}
+
+.mentors h1 {
+    padding-top: 52px;
+}
+
+.center {
+    padding: 60px 100px;
+}
+
+.lateral {
+    padding-bottom: 112px;
+}
+
+.projects h1 {
+    padding: 100px 0 60px;
+}
+
+.card-project {
+    padding: 0 78px 63px 0;
+}
+
+.footer {
+    box-shadow: 0 6px 20px 6px #7FCDC482;
+    background: #EAF9F3;
+}
+
+.links-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 1405px;
+    margin: 0 auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+}
+
+.column p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.column a {
+    margin-bottom: 10px;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-media img {
+    padding: 20px;
+}

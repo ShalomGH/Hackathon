@@ -1,8 +1,104 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="content-section">
-    <h1>Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css/main.css' %}" type="text/css">
 
-    <a href="/register">Registration</a>
-</div>
-{% endblock content %}
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-menu">
+            <div class="main-links">
+                <ul>
+                    <li>
+                        <a href="#">Специалисту</a>
+                    </li>
+                    <li>
+                        <a href="#">Инвестору</a>
+                    </li>
+                    <li>
+                        <a href="#">ИТ-специалисту</a>
+                    </li>
+                    <li>
+                        <a href="#">Наставнвику</a>
+                    </li>
+                    <li>
+                        <a href="#">Проекты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="other-links">
+                <a href="#"><img src="../../static/img/person.svg" class="person" alt="profile"></a>
+                <a href="#"><img src="../../static/img/menu.svg" alt="burger menu"></a>
+            </div>
+        </div>
+        <div class="header-action">
+            <div class="info">
+                <h1>Найди поддержку своему проекту</h1>
+                <p>На нашей платформе ты можешь найти единомышленников, специалистов, инвесторов, которые помогут тебе реализовать твою идею</p>
+                <div class="btn-block">
+                    <a href="#" class="btn find">Найти специалиста</a>
+                    <a href="#" class="btn watch">Смореть Проекты</a>
+                </div>
+            </div>
+            <img src="../../static/img/specialist.png" alt="specialist">
+        </div>
+    </header>
+    <div class="mentors-projects">
+        <div class="mentors">
+            <h1>Наши наставники</h1>
+            <div class="cards">
+                <img src="../../static/img/first-mentor.png" class="lateral" alt="mentor Julia">
+                <img src="../../static/img/second-mentor.png" class="center" alt="mentor Yuri">
+                <img src="../../static/img/third-mentor.png" class="lateral" alt="mentor Yuri">
+            </div>
+            <img src="../../static/img/pagination.svg" alt="decoration">
+        </div>
+        <div class="projects">
+            <h1>Наши проекты</h1>
+            <img src="../../static/img/first-project.png" class="card-project" alt="card project">
+            <img src="../../static/img/second-project.png" class="card-project" alt="card project">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="links-footer">
+            <div class="column">
+                <p>СТАРТ</p>
+                <a href="#">Главная</a>
+                <a href="#">Вход</a>
+                <a href="#">Стратапы</a>
+            </div>
+            <div class="column">
+                <p>О НАС</p>
+                <a href="#">О платформе</a>
+                <a href="#">Контакты</a>
+                <a href="#">Отзывы</a>
+            </div>
+            <div class="column">
+                <p>ПОМОЩЬ</p>
+                <a href="#">ИТ-специалисту</a>
+                <a href="#">Стартаперу</a>
+                <a href="#">Инвестору</a>
+            </div>
+            <div class="column">
+                <p>ПОМОЩЬ</p>
+                <a href="#">Наставнику</a>
+                <a href="#">Проекты</a>
+                <a href="#">Задать вопрос</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <img src="../../static/img/vk.svg" alt="vk">
+            <img src="../../static/img/telegram.svg" alt="telegram">
+            <img src="../../static/img/Instagram.svg" alt="Instagram">
+        </div>
+    </footer>
+</body>
+</html>

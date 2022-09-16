@@ -8,4 +8,3 @@ urlpatterns = [
     path('', index),
     path('register/', user_views.register, name='register'),
 ]
-
